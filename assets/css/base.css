@@ -31,8 +31,25 @@ p {
 .grid__row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 
+.grid__column-2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 16.66667%;
+}
+.grid__column-2-4 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 20%;
+}
+.grid__column-10 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 83.33333%;
+}
 /* Animation */
 @keyframes fadeIn {
   from {
@@ -87,7 +104,7 @@ p {
   outline: none;
   cursor: pointer;
   color: var(--text-color);
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
@@ -101,9 +118,65 @@ p {
 }
 .btn.btn--primary {
   color: var(--white-color);
-  background-color: var(--primary-color);
+  background-color: #f6412d;
 }
 .btn.btn--disable {
   cursor: default;
   background-color: #eae5e5;
+}
+
+/* selection  */
+.select-input {
+  position: relative;
+  min-width: 200px;
+  height: 35px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.select-input__label {
+  font-size: 1.7rem;
+  color: var(--text-color);
+}
+.select-input__icon {
+  font-size: 1.5rem;
+  color: rgb(131, 131, 131);
+  position: relative;
+  top: -1px;
+}
+.select-input:hover .select-input__list {
+  display: block;
+}
+.select-input::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+}
+.select-input__list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 78%;
+  background-color: var(--white-color);
+  border-radius: 2px;
+  padding: 8px 12px;
+  list-style: none;
+  display: none;
+}
+.select-input__link {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  font-family: "Times New Roman", Times, serif;
+}
+.select-input__link:hover {
+  color: #f6412d;
 }
